@@ -1,8 +1,8 @@
-@extends('admin.layouts.app')
+@extends('customer.layouts.app')
 
-@include('admin.components.navbar')
+@include('customer.components.navbar')
 
-@include('admin.components.sidebar')
+@include('customer.components.sidebar')
 
 @section('content')
     <div class="main-content">
@@ -20,7 +20,6 @@
                             <th>Shopping Address</th>
                             <th>Total Amount</th>
                             <th>Status</th>
-                            <th>Action</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -32,15 +31,6 @@
                                 <td>{{ $order->shipping_address }}</td>
                                 <td>{{ $order->total_amount }}</td>
                                 <td>{{ $order->status }}</td>
-                                <td>
-                                    <a href="{{ route('admin.order.edit', $order->id) }}" class="btn btn-primary">Edit</a>
-
-                                    <form action="{{ route('admin.order.delete', $order->id) }}" method="POST" style="display: inline-block">
-                                        @method('DELETE')
-                                        @csrf
-                                        <button type="submit" class="btn btn-danger">Delete</button>
-                                    </form>
-                                </td>
                             </tr>
                         @endforeach
                         </tbody>

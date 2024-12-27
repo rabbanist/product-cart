@@ -6,27 +6,27 @@
 
     <link rel="icon" type="image/png" href="uploads/favicon.png">
 
-    <title>Admin Panel</title>
+    <title>Customer Dashboard</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 
     <!-- Css includes -->
-    @include('admin.components.style')
+    @include('customer.components.style')
     <!-- JS includes -->
-    @include('admin.components.script')
+    @include('customer.components.script')
 
 </head>
 
 <body>
 <div id="app">
     <div class="main-wrapper">
-        
+
        @yield('content')
 
     </div>
 </div>
 
-@include('admin.components.footer-script')
+@include('customer.components.footer-script')
 
 @if($errors->any())
     @foreach ($errors->all() as $error)

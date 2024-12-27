@@ -6,7 +6,7 @@
     </form>
     <ul class="navbar-nav navbar-right justify-content-end rightsidetop">
         <li class="nav-link">
-            <a href="" target="_blank" class="btn btn-warning">Front End</a>
+            <a href="{{ route('home') }}" target="_blank" class="btn btn-warning">Front End</a>
         </li>
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -14,7 +14,7 @@
             </a>
             <ul class="dropdown-menu dropdown-menu-end">
                 <li><a class="dropdown-item" href=""><i class="far fa-user"></i> Edit Profile</a></li>
-                
+
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
 

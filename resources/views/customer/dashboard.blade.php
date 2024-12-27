@@ -1,8 +1,8 @@
-@extends('admin.layouts.app')
+@extends('customer.layouts.app')
 
-@include('admin.components.navbar')
+@include('customer.components.navbar')
 
-@include('admin.components.sidebar')
+@include('customer.components.sidebar')
 
 @section('content')
 <div class="main-content">
