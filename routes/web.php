@@ -49,7 +49,7 @@ Route::middleware(['auth','role:admin'])->prefix('admin')->group(function(){
     //Order update route
     Route::get('/order',[AdminOrderController::class,'index'])->name('admin.order.index');
     Route::get('/order/edit/{id}',[AdminOrderController::class,'orderEdit'])->name('admin.order.edit');
-    Route::put('/order/edit/{id}',[AdminOrderController::class,'orderUpdate'])->name('admin.order.update');
+    Route::put('/order/edit/{id}',[AdminOrderController::class,'updateOrderStatus'])->name('admin.order.update');
     Route::delete('/order/delete/{id}',[AdminOrderController::class,'orderDestroy'])->name('admin.order.delete');
 });
 

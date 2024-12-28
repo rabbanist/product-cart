@@ -19,7 +19,7 @@ class Role
         if ($request->user()->role !== $role) {
             if ($request->user()->role === 'admin') {
                 return redirect()->route('admin.dashboard');  
-            } elseif ($request->user()->role === 'customer') {
+            }else{
                 return redirect()->route('customer.dashboard');  
             }
         }

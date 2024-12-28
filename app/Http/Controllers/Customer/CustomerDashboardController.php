@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\Customer;
 
-use App\Http\Controllers\Controller;
 use App\Models\Order;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class CustomerDashboardController extends Controller
 {
@@ -15,7 +16,8 @@ class CustomerDashboardController extends Controller
 
     public function order()
     {
-        $orders = Order::where('user_id', auth()->id())->get();
-        return view('customer.order.index',compact('orders'));
+        $orders = Order::where('user_id', Auth::id())->get();
+
+        return view('customer.order.index', compact('orders'));
     }
 }

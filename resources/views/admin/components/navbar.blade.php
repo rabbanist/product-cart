@@ -8,23 +8,13 @@
         <li class="nav-link">
             <a href="{{route('home')}}" target="_blank" class="btn btn-warning">Front End</a>
         </li>
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <img alt="image" src="" class="rounded-circle-custom">
-            </a>
-            <ul class="dropdown-menu dropdown-menu-end">
-                <li><a class="dropdown-item" href=""><i class="far fa-user"></i> Edit Profile</a></li>
-
-                <form method="POST" action="{{ route('logout') }}">
-                    @csrf
-
-                    <x-dropdown-link :href="route('logout')"
-                            onclick="event.preventDefault();
-                                        this.closest('form').submit();">
-                       <i class="fas fa-sign-out-alt"></i> {{ __('Log Out') }}
-                    </x-dropdown-link>
-                </form>
-            </ul>
-        </li>
+        <form method="POST" action="{{ route('logout') }}">
+            @csrf
+            <x-dropdown-link :href="route('logout')"
+                    onclick="event.preventDefault();
+                                this.closest('form').submit();">
+               <i class="fas fa-sign-out-alt"></i> {{ __('Log Out') }}
+            </x-dropdown-link>
+        </form>
     </ul>
 </nav>
